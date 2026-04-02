@@ -1,0 +1,24 @@
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. 스크롤 감지 (Intersection Observer)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active'); // 화면에 들어오면 active 클래스 추가
+            }
+        });
+    }, { threshold: 0.15 });
+
+    // 모든 reveal 대상 관찰 시작
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    
+    // 2. 현재 페이지 메뉴 강조
+    const currentPath = window.location.pathname.split("/").pop();
+    document.querySelectorAll('nav a').forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.style.opacity = "1";
+            link.style.fontWeight = "600";
+            link.style.color = "#0066cc";
+        }
+    });
+});
