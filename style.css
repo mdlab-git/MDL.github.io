@@ -1,0 +1,148 @@
+/* style.css */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+:root {
+    --bg-color: #f5f5f7;
+    --card-bg: #ffffff;
+    --text-main: #1d1d1f;
+    --text-sub: #86868b;
+    --accent: #0066cc;
+    --nav-height: 52px;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    background-color: #ffffff;
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.47;
+    letter-spacing: -0.022em;
+    word-break: keep-all;
+}
+
+/* 상단 내비게이션: 애플 특유의 반투명 바 */
+nav {
+    position: fixed;
+    top: 0; width: 100%;
+    height: var(--nav-height);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    z-index: 9999;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+nav .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 22px;
+}
+
+.logo { font-size: 19px; font-weight: 700; color: var(--text-main); text-decoration: none; }
+
+nav ul { list-style: none; display: flex; gap: 35px; margin: 0; padding: 0; }
+nav a { text-decoration: none; color: var(--text-main); font-size: 13px; font-weight: 400; opacity: 0.8; transition: 0.3s; }
+nav a:hover { opacity: 1; color: var(--accent); }
+
+/* 섹션 레이아웃 */
+section { padding: 120px 22px; max-width: 980px; margin: 0 auto; }
+
+/* 히어로 섹션: 압도적인 타이포그래피 */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+}
+
+.hero h1 { font-size: 80px; font-weight: 700; margin: 0; letter-spacing: -0.015em; }
+.hero p { font-size: 28px; color: var(--text-sub); margin-top: 10px; font-weight: 500; }
+
+/* --- 비디오 배경 히어로 섹션 스타일 시작 --- */
+
+.hero {
+    position: relative; /* 비디오를 안에 가두기 위해 필수 */
+    height: 500px; /* 높이를 고정합니다. 원하시면 조절하세요 */
+    display: flex;
+    align-items: center; /* 텍스트 수직 중앙 정렬 */
+    padding: 0 10%; /* 좌우 여백 */
+    overflow: hidden; /* 비디오가 넘치지 않게 자름 */
+    border-bottom: 1px solid var(--border);
+    color: white; /* 기본 글자색을 흰색으로 */
+}
+
+/* 비디오 컨테이너 */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* 가장 뒤로 보냄 */
+}
+
+/* 실제 비디오 태그 */
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 화면에 꽉 차게 비율 유지하며 자름 */
+}
+
+/* 비디오 위에 까만 막 씌우기 (글자 잘 보이게) */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7); /* 짙은 네이비색 반투명 레이어 (투명도 0.7 조절 가능) */
+    z-index: 1; /* 비디오보다 앞에 */
+}
+
+/* 텍스트 내용 */
+.hero-content {
+    position: relative;
+    z-index: 2; /* 모든 것보다 가장 앞에 */
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 4rem; /* 글자 크기를 좀 더 키웠습니다 */
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 20px 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3); /* 글자에 그림자를 줘서 더 잘 보이게 */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+/* --- 비디오 배경 히어로 섹션 스타일 끝 --- */
+
+/* 연구 분야 카드 그리드 */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 24px; margin-top: 60px; }
+.card {
+    background: var(--bg-color);
+    border-radius: 28px;
+    padding: 50px;
+    text-align: left;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.card:hover { transform: scale(1.02); }
+.card h3 { font-size: 32px; margin-bottom: 15px; }
+.card p { font-size: 17px; color: var(--text-sub); margin: 0; }
+
+/* 애니메이션 효과: JS가 안돼도 보이게끔 초기 설정 보완 */
+.reveal { opacity: 0; transform: translateY(50px); transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+footer { padding: 60px 22px; background: var(--bg-color); text-align: center; font-size: 12px; color: var(--text-sub); }

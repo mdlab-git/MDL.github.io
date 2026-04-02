@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Materials Design Lab.</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        :root {
+            --text: #1d1d1f;
+            --sub: #86868b;
+            --accent: #0066cc;
+            --line: rgba(0,0,0,0.12);
+            --bg: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 52px;
+            background: rgba(255,255,255,0.82);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .nav-content {
+            max-width: 980px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 19px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 13px;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        section {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 140px 20px 100px;
+            text-align: left;
+        }
+
+        .page-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin: 0 0 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .page-subtitle {
+            font-size: 22px;
+            color: var(--sub);
+            margin: 0 0 60px;
+            line-height: 1.6;
+        }
+
+        .year {
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: 70px;
+            margin-bottom: 28px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--text);
+            letter-spacing: -0.01em;
+        }
+
+        .pub-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pub-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--line);
+            font-size: 17px;
+            line-height: 1.75;
+            color: var(--text);
+        }
+
+        .pub-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .pub-title {
+            font-weight: 600;
+        }
+
+        .journal {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
+            transition: 1s ease-out;
+        }
+
+        .js-enabled .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .js-enabled .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 40px;
+            }
+
+            .page-subtitle {
+                font-size: 18px;
+            }
+
+            .year {
+                font-size: 24px;
+            }
+
+            .pub-item {
+                font-size: 15px;
+            }
+
+            nav ul {
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>document.body.classList.add('js-enabled');</script>
+
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">MDL</a>
+            <ul>
+                <li><a href="index.html">Main</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <h1 class="page-title reveal">Publications.</h1>
+        <p class="page-subtitle reveal">세상을 바꾸는 우리의 연구 결과들입니다.</p>
+
+        <div class="year reveal">2025</div>
+        <ul class="pub-list reveal">
+            <li class="pub-item">
+                Hong, S. Y., Lee, D. S., Lee, H. J., Hong, K. H., &amp; Im, S. H.
+                <span class="pub-title">Recent progress in Pb-, Sn-, and Pb–Sn-based inorganic perovskite solar cells: toward enhanced stability and efficiency.</span>
+                <span class="journal">EES Solar</span>, 1(4), 441–481, 2025.
+            </li>
+            <li class="pub-item">
+                Kim, K., Kwon, N., Park, S. W., Kim, W., Kim, S., Yoon, E., Hong, K. H., ... &amp; Park, S.
+                <span class="pub-title">Exciton Binding Energy Modulation in 2D Perovskites: A Phenomenological Keldysh Framework.</span>
+                <span class="journal">Advanced Functional Materials</span>, e20461, 2025.
+            </li>
+        </ul>
+
+        <div class="year reveal">2024</div>
+        <ul class="pub-list reveal">
+            <li class="pub-item">
+                Koh, J., Kim, D., Park, S. W., Kim, H., Hong, K. H., &amp; Shin, B.
+                <span class="pub-title">Selective reactivity-assisted sacrificial additive coating for surface passivation of wide bandgap perovskite solar cells with cesium tetrafluoroborate.</span>
+                <span class="journal">Journal of Materials Chemistry A</span>, 12(7), 4290–4298, 2024.
+            </li>
+            <li class="pub-item">
+                Ryu, H., &amp; Hong, K. H.
+                <span class="pub-title">LHP synthesis simulating method and apparatus.</span>
+                <span class="journal">U.S. Patent No. 11,912,733</span>, 27 Feb. 2024.
+            </li>
+            <li class="pub-item">
+                Abbey, S., Jang, H., Frimpong, B., Nguyen, V. Q., Park, J. H., Park, S. D., ... Hong, K. H., &amp; Oh, M. W.
+                <span class="pub-title">Chiral Twist Interface Modulation Enhances Thermoelectric Properties of Tellurium Crystal.</span>
+                <span class="journal">Advanced Science</span>, 11(35), 2402147, 2024.
+            </li>
+            <li class="pub-item">
+                Lee, S. H., &amp; Hong, K. H.
+                <span class="pub-title">Collective Oxygen Transport in Tetragonal Ta2O5.</span>
+                <span class="journal">arXiv</span>, arXiv:2410.22017, 2024.
+            </li>
+            <li class="pub-item">
+                Ryu, D. H., Kim, J. H., Obila, J. O., Yun, H. S., Lee, S., Kang, B. J., Hong, K. H., ... &amp; Song, C. E.
+                <span class="pub-title">Erbium chloride-mediated nucleation/crystallization control for high-performance tin-based perovskite solar cells.</span>
+                <span class="journal">EcoMat</span>, e12500, 2024.
+            </li>
+            <li class="pub-item">
+                Heo, J. H., Park, J. K., Lee, H. J., Shin, E. H., Hong, S. Y., Hong, K. H., ... &amp; Im, S. H.
+                <span class="pub-title">Inorganic-Derived 0D Perovskite Induced Surface Lattice Arrangement for Efficient and Stable All-Inorganic Perovskite Solar Cells.</span>
+                <span class="journal">Advanced Materials</span>, 36(45), 2408387, 2024.
+            </li>
+            <li class="pub-item">
+                Heo, J. H., Park, S. W., Lee, H. J., Park, J. K., Im, S. H., &amp; Hong, K. H.
+                <span class="pub-title">Minimizing voltage losses in Sn perovskite solar cells by Cs2SnI6 passivation.</span>
+                <span class="journal">EcoMat</span>, e12491, 2024.
+            </li>
+        </ul>
+
+        <div class="year reveal">2023</div>
+        <ul class="pub-list reveal">
+            <li class="pub-item">
+                Abbey, S., Jang, H., Frimpong, B., Kumar, N., Nam, W. H., Park, J. H., Hong, K. H., ... &amp; Oh, M. W.
+                <span class="pub-title">Twisted grain boundary leads to high thermoelectric performance in tellurium crystals.</span>
+                <span class="journal">Energy &amp; Environmental Science</span>, 16(1), 125–137, 2023.
+            </li>
+            <li class="pub-item">
+                Ha, Y., Son, Y., Paik, D., Hong, K. H., &amp; Kim, H.
+                <span class="pub-title">Effect of Surface Termination on Carrier Dynamics of Metal Halide Perovskites: Ab Initio Quantum Dynamics Study.</span>
+                <span class="journal">Electronic Materials Letters</span>, 2023.
+            </li>
+            <li class="pub-item">
+                Ryu, D. H., Khan, N., Park, J. G., Paik, D., Kang, B. J., Jeon, N. J., Hong, K. H., ... &amp; Song, C. E.
+                <span class="pub-title">Morphology and Performance Enhancement through the Strong Passivation Effect of Amphoteric Ions in Tin-based Perovskite Solar Cells.</span>
+                <span class="journal">Small</span>, 2302418, 2023.
+            </li>
+            <li class="pub-item">
+                Park, S. W., Heo, J. H., Lee, H. J., Kim, H., Im, S. H., &amp; Hong, K. H.
+                <span class="pub-title">Compositional Design for High-Efficiency All-Inorganic Tin Halide Perovskite Solar Cells.</span>
+                <span class="journal">ACS Energy Letters</span>, 8(12), 5061–5069, 2023.
+            </li>
+            <li class="pub-item">
+                Park, J. K., Heo, J. H., Lee, H. J., Kim, B. W., Park, S. W., Hong, K. H., &amp; Im, S. H.
+                <span class="pub-title">Energy-well band structure for enhanced exciton confinement effect in perovskite light-emitting diodes via spray-coating.</span>
+                <span class="journal">Journal of Alloys and Compounds</span>, 965, 171499, 2023.
+            </li>
+        </ul>
+
+        <div class="year reveal">2022</div>
+        <ul class="pub-list reveal">
+            <li class="pub-item">
+                Ryu, H., &amp; Hong, K. H.
+                <span class="pub-title">LHP synthesis simulating method and apparatus.</span>
+                <span class="journal">U.S. Patent Application No. 17/285,570</span>, 2022.
+            </li>
+            <li class="pub-item">
+                Kwon, H. G., Ryu, J., Park, J. G., Park, S. W., Kwon, O. P., Hong, K. H., &amp; Kim, S. W.
+                <span class="pub-title">Fabrication of Colloidal Cesium Metal Halide (CsMX: M = Fe, Co, and Ni) Nanoparticles and Assessment of Their Thermodynamic Stability by DFT Calculations.</span>
+                <span class="journal">Inorganic Chemistry</span>, 61, 14361–14367, 2022.
+            </li>
+            <li class="pub-item">
+                Park, J. G., Park, S. W., &amp; Hong, K. H.
+                <span class="pub-title">High-throughput screening of perovskite inspired bismuth halide materials: toward lead-free photovoltaic cells and light-emitting diodes.</span>
+                <span class="journal">Nanotechnology</span>, 33, 2022.
+            </li>
+            <li class="pub-item">
+                Khan, N., Ryu, D. H., Park, J. G., Lee, H. K., Lee, S. K., Shin, W. S., Lee, J. C., Hong, K. H., Im, S. H., &amp; Song, C. E.
+                <span class="pub-title">Bromide Incorporation Enhances Vertical Orientation of Triple Organic Cation Tin-Halide Perovskites for High-Performance Lead-Free Solar Cells.</span>
+                <span class="journal">Solar RRL</span>, 6, 1–10, 2022.
+            </li>
+        </ul>
+
+        <div class="year reveal">2021</div>
+        <ul class="pub-list reveal">
+            <li class="pub-item">
+                Park, J.-G., &amp; Hong, K.-H.
+                <span class="pub-title">Dual-Site Compositional Engineering of Bismuth-Based Halide Perovskites for Stable and Efficient Lead-free Solar Cells.</span>
+                <span class="journal">The Journal of Physical Chemistry C</span>, 125(24), 13138–13145, 2021.
+            </li>
+            <li class="pub-item">
+                Lee, Y., Kim, H., Hong, K.-H., &amp; Cho, K.
+                <span class="pub-title">Femtosecond Quantum Dynamics of Excited-State Evolution of Halide Perovskites: Quantum Chaos of Molecular Cations.</span>
+                <span class="journal">The Journal of Physical Chemistry C</span>, 125(19), 10676–10684, 2021.
+            </li>
+            <li class="pub-item">
+                Lyu, M., Park, S., Lee, H., Ma, B. S., Park, S. H., Hong, K.-H., ... &amp; Park, N.-G.
+                <span class="pub-title">Simultaneous Enhanced Efficiency and Stability of Perovskite Solar Cells Using Adhesive Fluorinated Polymer Interfacial Material.</span>
+                <span class="journal">ACS Applied Materials &amp; Interfaces</span>, 13(30), 2021.
+            </li>
+            <li class="pub-item">
+                Kang, S., Park, S., Park, S., Kwon, H., Lee, J., Hong, K.-H., ... &amp; Park, J.
+                <span class="pub-title">Achieving green and deep-blue perovskite LEDs by dimensional control using various ammonium bromides with CsPbBr3.</span>
+                <span class="journal">Materials Today Energy</span>, 21, 100749, 2021.
+            </li>
+            <li class="pub-item">
+                Yoo, S. H., Jung, K. C., Hong, K. H., &amp; Park, K.
+                <span class="pub-title">Effects of Dislocation Distribution and Carbon Effective Diffusion on Strain Aging Behavior of a Low Carbon Dual Phase Steel.</span>
+                <span class="journal">Transactions of Materials Processing</span>, 30(5), 226–235, 2021.
+            </li>
+            <li class="pub-item">
+                Ha, Y. H., Park, J.-G., Hong, K.-H., &amp; Kim, H. J.
+                <span class="pub-title">Enhanced Light Emission through Symmetry Engineering of Halide Perovskites.</span>
+                <span class="journal">Journal of the American Chemical Society</span>, 144(1), 297–305, 2021.
+            </li>
+        </ul>
+
+        <div class="year reveal">2020</div>
+        <ul class="pub-list reveal">
+            <li class="pub-item">
+                Kim, J., Lee, S. H., Im, S. H., &amp; Hong, K. H.
+                <span class="pub-title">Phase Selection of Cesium Lead Triiodides through Surface Ligand Engineering.</span>
+                <span class="journal">Journal of Physical Chemistry Letters</span>, 11(10), 4232–4238, 2020.
+            </li>
+            <li class="pub-item">
+                Kim, S., Eom, T., Ha, Y.-S., Hong, K.-H., &amp; Kim, H.
+                <span class="pub-title">Thermodynamics of Multicomponent Perovskites: A Guide to Highly Efficient and Stable Solar Cell Materials.</span>
+                <span class="journal">Chemistry of Materials</span>, 32(10), 4265–4272, 2020.
+            </li>
+            <li class="pub-item">
+                Thampy, S., Zhang, B., Hong, K. H., Cho, K., &amp; Hsu, J. W. P.
+                <span class="pub-title">Altered Stability and Degradation Pathway of CH3NH3PbI3 in Contact with Metal Oxide.</span>
+                <span class="journal">ACS Energy Letters</span>, 5(4), 1147–1152, 2020.
+            </li>
+            <li class="pub-item">
+                Hasan, S. A. U., Lee, D. S., Im, S. H., &amp; Hong, K. H.
+                <span class="pub-title">Present Status and Research Prospects of Tin-based Perovskite Solar Cells.</span>
+                <span class="journal">Solar RRL</span>, 4(2), 2020.
+            </li>
+            <li class="pub-item">
+                Cho, K. S., Jang, H., Oh, J. Y., Kim, J. W., Lee, J. S., Choi, Y., ... &amp; Chung, C. H.
+                <span class="pub-title">Effect of the concentration of citrate on the growth of aqueous chemical bath deposited ZnO and application of the film to Cu(In, Ga)Se2 solar cells.</span>
+                <span class="journal">Korean Journal of Materials Research</span>, 30(4), 204–210, 2020.
+            </li>
+            <li class="pub-item">
+                Choi, Y. K., Heo, J. H., Hong, K.-H., &amp; Im, S. H.
+                <span class="pub-title">Dual-site mixed layer-structured FAxCs3−xSb2I6Cl3 Pb-free metal halide perovskite solar cells.</span>
+                <span class="journal">RSC Advances</span>, 10(30), 17724–17730, 2020.
+            </li>
+            <li class="pub-item">
+                Lee, Y., Kim, H., Hong, K.-H., &amp; Cho, K.
+                <span class="pub-title">Femtosecond quantum dynamics of excited-state evolution of halide perovskites: Quantum chaos of molecular cations.</span>
+                <span class="journal">Research Square</span>, 2020.
+            </li>
+            <li class="pub-item">
+                Heo, J. H., Park, J. G., Im, S. H., &amp; Hong, K. H.
+                <span class="pub-title">Interstitial Engineering toward Stable Tin Halide Perovskite Solar Cells.</span>
+                <span class="journal">Solar RRL</span>, 2020.
+            </li>
+            <li class="pub-item">
+                Kim, H. S., Gu, H. W., Chung, C. H., Song, C. H., &amp; Hong, K.-H.
+                <span class="pub-title">Compositional Engineering of FA-Based Lead Halide Perovskites for Shear Coating Processes.</span>
+                <span class="journal">ECS Meeting Abstracts</span>, 27(1903), 2020.
+            </li>
+            <li class="pub-item">
+                Thampy, S., Zhang, B., Park, J. G., Hong, K. H., &amp; Hsu, J. W. O.
+                <span class="pub-title">Bulk and interfacial decomposition of formamidinium iodide in contact with metal oxide.</span>
+                <span class="journal">Materials Advances</span>, 1(9), 3349–3357, 2020.
+            </li>
+        </ul>
+
+        <div class="year reveal">2019</div>
+        <ul class="pub-list reveal">
+            <li class="pub-item">
+                Choe, J., Song, J., Lee, D., Byun, H. R., Jeong, M. S., Chung, C. H., ... &amp; Kim, J.
+                <span class="pub-title">Rapid large-grain (&gt;100 μm) formation of organic-inorganic perovskite thin films via shear deposition for photovoltaic application.</span>
+                <span class="journal">Solar Energy</span>, 191, 629–636, 2019.
+            </li>
+            <li class="pub-item">
+                Lee, S., Jang, J., Cho, K. S., Oh, Y. J., Hong, K. H., &amp; Chung, C. H.
+                <span class="pub-title">Data on lateral collection length of charge carriers depending on pre-white-light soaking process for metal mesh transparent electrode based Cu(In,Ga)Se2 solar cells.</span>
+                <span class="journal">Data in Brief</span>, 25, 104407, 2019.
+            </li>
+            <li class="pub-item">
+                Jeong, J., Song, D., Choe, J., Chung, C. H., &amp; Hong, K. H.
+                <span class="pub-title">Computational design of highly efficient and robust hole transport layers in perovskite solar cells.</span>
+                <span class="journal">Journal of Korean Institute of Metals and Materials</span>, 57(8), 535–542, 2019.
+            </li>
+        </ul>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

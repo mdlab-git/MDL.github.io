@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Materials Design Lab.</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        :root { 
+            --bg: #ffffff; 
+            --text: #1d1d1f; 
+            --sub: #3a3a3c; 
+            --accent: #0044ee; /* 강조될 파란색 */
+        }
+
+        body { font-family: 'Pretendard', sans-serif; margin: 0; color: var(--text); background-color: var(--bg); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        
+        /* 배경 시스템: 이미지가 가장 잘 보이도록 설정 */
+        #bg-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            z-index: -1;
+            background-image: url('bg.png'), url('./bg.png'), url('./bg.png.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #bg-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.02); /* 오버레이 최소화 */
+        }
+
+        /* 내비게이션: 투명 유리 효과 */
+        nav { 
+            position: fixed; top: 0; width: 100%; height: 52px; 
+            background: rgba(255, 255, 255, 0.4); 
+            backdrop-filter: saturate(180%) blur(20px); 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(255,255,255,0.2); 
+        }
+        .nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 32px; }
+        .logo { font-size: 21px; font-weight: 800; text-decoration: none; color: var(--accent); letter-spacing: -0.06em; }
+        nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: var(--text); font-size: 13px; opacity: 0.8; transition: 0.4s; font-weight: 600; }
+        nav a:hover { opacity: 1; color: var(--accent); }
+
+        /* 메인 레이아웃 */
+        section { max-width: 1100px; margin: 0 auto; padding: 180px 32px; position: relative; z-index: 10; }
+        
+        .page-title { 
+            font-size: clamp(40px, 6vw, 68px); 
+            font-weight: 800; 
+            margin-bottom: 80px; 
+            text-align: center; 
+            color: var(--text); 
+            letter-spacing: -0.04em; 
+            line-height: 1.15; 
+            word-break: keep-all;
+            text-shadow: 0 0 30px rgba(255,255,255,0.8);
+        }
+
+        /* 강조 텍스트 스타일 */
+        .highlight {
+            color: var(--accent);
+            display: inline-block;
+        }
+        
+        .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        
+        /* 카드 디자인: 반투명 유리 질감 최적화 */
+        .card { 
+            background: rgba(255, 255, 255, 0.4); /* 0.75에서 0.4로 대폭 낮춤 */
+            backdrop-filter: blur(15px) saturate(140%);
+            border-radius: 40px; 
+            padding: 60px; 
+            border: 1px solid rgba(255,255,255,0.4);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.55); }
+        .card h3 { font-size: 30px; margin: 0 0 20px 0; font-weight: 800; }
+        .card p { font-size: 17px; color: var(--sub); margin: 0; line-height: 1.7; word-break: keep-all; font-weight: 500; }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.15, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        footer { padding: 80px; text-align: center; font-size: 12px; color: rgba(0,0,0,0.4); position: relative; z-index: 10; }
+    </style>
+</head>
+<body>
+    <div id="bg-container">
+        <div id="bg-overlay"></div>
+    </div>
+
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">MDL</a>
+            <ul>
+                <li><a href="index.html">Main</a></li>
+                <li><a href="research.html">RESEARCH</a></li>
+                <li><a href="members.html">MEMBERS</a></li>
+                <li><a href="publications.html">PUBLICATIONS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <h1 class="page-title reveal">
+            <span class="highlight">Computational Synthesis of<br>Next-Generation Energy Lattices.</span>
+        </h1>
+        
+        <div class="content-grid">
+            <div class="card reveal">
+                <h3>DFT-Driven Insight</h3>
+                <p>제일원리 계산(Density Functional Theory)을 통해 전자 구조와 원자간 상호작용을 정밀하게 모사하여 실험적 한계를 극복하는 새로운 에너지 소재의 논리를 제시합니다.</p>
+            </div>
+            <div class="card reveal">
+                <h3>Quantum Dynamics</h3>
+                <p>양자 역학적 시뮬레이션을 활용하여 페로브스카이트 및 고체 전해질 격자의 열역학적 안정성과 전하 운송 특성을 예측하고 설계합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>© 2026 MATERIAL DESIGN LOGIC. ALL RIGHTS RESERVED.</footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => { 
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); 
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

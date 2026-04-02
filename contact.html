@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Materials Design Lab.</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        :root { 
+            --accent: #0066cc; 
+            --text: #1d1d1f; 
+            --subtext: #2f2f33;
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            margin: 0;
+            background-color: #000;
+        }
+
+        .full-screen-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("a.png.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+            filter: brightness(1.02) contrast(1.08) saturate(1.05);
+        }
+
+        nav { 
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 52px;
+            background: #ffffff;
+            z-index: 1000;
+            border-bottom: 1px solid #dcdcdc;
+        }
+
+        .nav-content {
+            max-width: 980px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 19px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--accent);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 13px;
+            opacity: 0.85;
+            transition: opacity 0.2s ease;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        section {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 180px 20px 100px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(255,255,255,0.18);
+        }
+
+        .subtitle {
+            font-size: 22px;
+            color: var(--subtext);
+            margin-bottom: 60px;
+            text-shadow: 0 1px 8px rgba(255,255,255,0.15);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .info-card { 
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 22px;
+            padding: 40px;
+            text-align: left;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.16);
+        }
+
+        .info-card h3 {
+            font-size: 12px;
+            color: var(--accent);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .info-card p {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .map-card {
+            grid-column: 1 / -1;
+            padding: 24px;
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+        }
+
+        .map-wrap {
+            margin-top: 12px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+        }
+
+        .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 420px;
+            border: 0;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 140px 16px 80px;
+            }
+
+            h1 {
+                font-size: 46px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+                margin-bottom: 40px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .info-card {
+                padding: 28px;
+            }
+
+            .info-card p {
+                font-size: 18px;
+            }
+
+            .map-wrap iframe {
+                height: 320px;
+            }
+
+            nav ul {
+                gap: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="full-screen-bg"></div>
+
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">MDL</a>
+            <ul>
+                <li><a href="index.html">Main</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section>
+        <h1 class="reveal">Contact.</h1>
+        <p class="subtitle reveal">차세대 태양전지 소재 연구를 함께할 열정적인 인재를 기다립니다</p>
+
+        <div class="contact-grid">
+            <div class="info-card reveal">
+                <h3>Location</h3>
+                <p>대전 유성구 동서대로 125<br>한밭대학교 N8동213호</p>
+            </div>
+
+            <div class="info-card reveal">
+                <h3>Email</h3>
+                <p>kiha.hong@hanbat.ac.kr</p>
+            </div>
+
+            <div class="info-card reveal">
+                <h3>Tel</h3>
+                <p>+82 042-821-1238</p>
+            </div>
+
+            <div class="info-card reveal map-card">
+                <h3>Map</h3>
+                <div class="map-wrap">
+                    <iframe
+                        src="https://www.google.com/maps?q=대전%20유성구%20동서대로%20125%20한밭대학교%20N8동&output=embed"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
